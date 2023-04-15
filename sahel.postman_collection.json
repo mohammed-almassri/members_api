@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d8a73273-ff00-4aa5-8ea8-202b4f0d4d88",
+		"_postman_id": "c0d6cf83-0bb0-479c-a85e-7e581b2c06bd",
 		"name": "sahel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6498188"
+		"_exporter_id": "10905007"
 	},
 	"item": [
 		{
@@ -13,7 +13,13 @@
 					"name": "subscription types",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://sahl.io/{{api}}/members/subscriptionTypes",
 							"protocol": "https",
@@ -63,9 +69,20 @@
 					"name": "pay",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://sahl.io/{{api}}/members/subscriptionTypes/2/pay",
+							"raw": "https://sahl.io/{{api}}/members/subscriptionTypes/1/pay",
 							"protocol": "https",
 							"host": [
 								"sahl",
@@ -75,8 +92,15 @@
 								"{{api}}",
 								"members",
 								"subscriptionTypes",
-								"2",
+								"1",
 								"pay"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "4.2",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -177,7 +201,13 @@
 					"name": "Categories",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://sahl.io/{{api}}/members/categories",
 							"protocol": "https",
@@ -307,9 +337,20 @@
 					"name": "category",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://sahl.io/{{api}}/members/categories/76",
+							"raw": "https://sahl.io/{{api}}/members/categories/45",
 							"protocol": "https",
 							"host": [
 								"sahl",
@@ -319,7 +360,7 @@
 								"{{api}}",
 								"members",
 								"categories",
-								"76"
+								"45"
 							]
 						}
 					},
@@ -329,7 +370,18 @@
 					"name": "Samples",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://sahl.io/{{api}}/members/samples",
 							"protocol": "https",
@@ -365,6 +417,11 @@
 								"key": "Content-language",
 								"value": "en",
 								"type": "text"
+							},
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -388,7 +445,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://sahl.io/{{api}}/members/attempts?type=sample&sample_id=29&is_real=1",
+							"raw": "https://sahl.io/{{api}}/members/attempts?type=sample&sample_id=29&is_real=1&category_type=both",
 							"protocol": "https",
 							"host": [
 								"sahl",
@@ -411,6 +468,10 @@
 								{
 									"key": "is_real",
 									"value": "1"
+								},
+								{
+									"key": "category_type",
+									"value": "both"
 								}
 							]
 						}
@@ -435,6 +496,11 @@
 							{
 								"key": "Content-language",
 								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "Api-Version",
+								"value": "4.2",
 								"type": "text"
 							}
 						],
@@ -531,10 +597,15 @@
 								"key": "Content-language",
 								"value": "en",
 								"type": "text"
+							},
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://sahl.io/{{api}}/members/attempts/getPreviousAttempt?type=category&category_id=5&is_real=0",
+							"raw": "https://sahl.io/{{api}}/members/attempts/getPreviousAttempt?type=sample&sample_id=5&is_real=0&category_type=both",
 							"protocol": "https",
 							"host": [
 								"sahl",
@@ -549,15 +620,24 @@
 							"query": [
 								{
 									"key": "type",
-									"value": "category"
+									"value": "sample"
 								},
 								{
-									"key": "category_id",
+									"key": "sample_id",
 									"value": "5"
 								},
 								{
 									"key": "is_real",
 									"value": "0"
+								},
+								{
+									"key": "category_type",
+									"value": "both"
+								},
+								{
+									"key": "category_id",
+									"value": "4",
+									"disabled": true
 								}
 							]
 						}
@@ -583,6 +663,11 @@
 								"key": "Content-language",
 								"value": "en",
 								"type": "text"
+							},
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -590,12 +675,12 @@
 							"urlencoded": [
 								{
 									"key": "completable_type",
-									"value": "App\\Models\\Sample",
+									"value": "App\\Models\\Explanation",
 									"type": "text"
 								},
 								{
 									"key": "completable_id",
-									"value": "29",
+									"value": "135",
 									"type": "text"
 								}
 							]
@@ -664,6 +749,253 @@
 								"members",
 								"attempts",
 								"538",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attempt result",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/attempts/580",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"attempts",
+								"580"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get attempts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/attempts",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"attempts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/search?query=سؤال",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "سؤال"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/user",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "question",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/questions/13",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"questions",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/settings",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout other sessions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "session_id",
+									"value": "3277190",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/logoutOtherSessions",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"logoutOtherSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel subscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Version",
+								"value": "4.2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "session_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sahl.io/{{api}}/members/subscriptions/173/cancel",
+							"protocol": "https",
+							"host": [
+								"sahl",
+								"io"
+							],
+							"path": [
+								"{{api}}",
+								"members",
+								"subscriptions",
+								"173",
 								"cancel"
 							]
 						}
@@ -1537,7 +1869,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "{{local_token}}",
+				"value": "{{prod_token}}",
 				"type": "string"
 			}
 		]
